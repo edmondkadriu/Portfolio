@@ -1,0 +1,63 @@
+﻿@model Portfolio03.Models.Contact
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<section class="contact" id="contact">
+
+<h1 class="heading"> <span>contact</span> me </h1>
+
+<div class="row">
+
+    <div class="content">
+
+        <h3 class="title">contact info</h3>
+
+        <div class="info">
+            <h3> <i class="fas fa-envelope"></i>edmond.kadriu2000@gmail.com </h3>
+            <h3> <i class="fas fa-phone"></i>049-506-678</h3>
+            <h3> <i class="fas fa-map-marker-alt"></i> Mitrovice, Kosove 40000</h3>
+        </div>
+
+    </div>
+
+    <form  asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="box">
+            <label asp-for="Emri"></label>
+            <input asp-for="Emri" class="box" />
+            <span asp-validation-for="Emri" class=""></span>
+        </div>
+        <div class="box">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="box" />
+            <span asp-validation-for="Email" class=""></span>
+        </div>
+        <div class="box">
+            <label asp-for="Projekti"></label>
+            <input asp-for="Projekti" class="box" />
+            <span asp-validation-for="Projekti" class=""></span>
+        </div>
+         <div class="box">
+                <label asp-for="Mesazhi"></label>
+                <textarea cols="30" rows="10"  asp-for="Mesazhi" class="box message"></textarea>
+                <span asp-validation-for="Mesazhi" class=""></span>
+        </div>
+        @*<textarea name="" id="" cols="30" rows="10" class="box message" placeholder="message"></textarea>*@
+        <button type="submit" value="Create" class="btn"> send <i class="fas fa-paper-plane"></i> </button>
+
+    </form>
+
+</div>
+
+</section>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
